@@ -1,0 +1,33 @@
+/* Reset default padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  color: hsl(200, 19%, 18%);
+}
+
+/* Style the navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #cfd8dc;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  padding-left: 1rem;
+}
+
+/* Style the links */
+nav a {
+  text-decoration: seagreen;
+  color: #0d47a1;
+}
