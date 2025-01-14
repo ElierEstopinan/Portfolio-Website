@@ -25,13 +25,11 @@
   color: white;
   font-weight: 600;
   transition: 0.03s ease;
- 
 }
 .logo:hover {
   color: aqua;
-  text-shadow: 0 0 25px aqua, 0 0 50px aqua,
-  transform: scale(1.1);
- 
+  text-shadow: 0 0 25px aqua, 0 0 50px aqua;
+  transform: scale(1.1); 
 }
 span {
   color: aqua;
