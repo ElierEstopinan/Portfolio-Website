@@ -27,12 +27,12 @@
   transition: 0.03s ease;
 }
 .logo:hover {
-  color: aqua;
-  text-shadow: 0 0 25px aqua, 0 0 50px aqua;
+  color: #009fbf;
+  text-shadow: 0 0 25px #009fbf, 0 0 50px #009fbf;
   transform: scale(1.1); 
 }
 span {
-  color: aqua;
+  color: #009fbf;
 }
 .navbar a{
   font-size: 18px;
@@ -44,8 +44,8 @@ span {
 }
 .navbar a:hover, 
 .navbar a.active{
-  color: aqua;
-  border-bottom: 3px solid aqua;
+  color: #009fbf;
+  border-bottom: 3px solid #009fbf;
 }
 .contact {
   padding: 10px 28px;
@@ -59,7 +59,82 @@ span {
   transition: 0.3s ease;
 }
 .contact:hover {
-  background-color: aqua;
-  box-shadow: 0 0 25px aqua;
+  background-color: #009fbf;;
+  box-shadow: 0 0 25px #009fbf;
   color: white
+}
+.home{
+  width: 100%;
+  min-height: 110vh;
+  background: rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+  gap: 10em;
+  padding: 30px 12%;
+}
+.home-content {
+  max-width: 800px;
+}
+.home-content h3{
+  font-size: 42px;
+}
+.come-content h1{
+  font-size: 62px;
+  line-height: 1.2; 
+}
+.home-content p{
+  font-size: 18px;
+  margin: 25px 0 30px;
+}
+.btn-box{
+  width: 345px;
+  display: flex;
+  gap: 2em;
+}
+.btn-1 {
+  padding: 15px 28px;
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.btn-1:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+.btn-2{
+  padding: 15px 28px;
+  background-color: #009fbf;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.btn-2:hover {
+  background-color: white;
+  color: black;
+}
+.img-box img{
+  border-radius: 50%;
+  width: 550px;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background: #009fbf;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
 }
