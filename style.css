@@ -138,3 +138,33 @@ span {
   background-color: rgba(0, 0, 0, 0.6);
   width: 50px;
 }
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12% 18%;
+  gap: 10em;
+  background: black;
+}
+.about-img img{
+  position: relative;
+  width: 550px;
+  box-shadow: 0 0 25px #009fbf,
+              0 0 50px #009fbf;
+  border-radius: 50%;
+}
+.about-content h2{
+  text-align: left;
+  color: white;
+  font-size: 42px;
+}
+.about-content h3{
+  color: white;
+  font-size: 62px;
+}
+.about-content p{
+  color: white;
+  font-size: 20px;
+  margin: 2em 0 3em; 
+}
