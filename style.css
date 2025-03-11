@@ -53,6 +53,69 @@ span {
   border-bottom: 3px solid #009fbf;
 }
 
+/* Skills */ 
+.card {
+  width: 90%;
+  height: 350px;
+  margin: 30px;
+  background: black; 
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff; /* White text for better contrast */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #009fbf; /* Slightly darker shadow */
+}
+.card__tags {
+  overflow: auto;
+  height: 80%;
+}
+.title {
+  font-size: 42px;
+  color: #009fbf;
+  text-align: center;
+}
+
+.tag__name {
+  display: inline-block;
+  color: #333; /* Dark text color */
+  font-size: 1.1em;
+  background-color: #fff; /* White background */
+  padding: 6px 23px 9px;
+  border-radius: 70em;
+  margin: 8px 6px 8px 0;
+  margin-left: 0px;
+  position: relative;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tag__name::before,
+.tag__name::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #009fbf; /* Primary color for the dots */
+}
+
+.tag__name::before {
+  left: 7px;
+}
+
+.tag__name::after {
+  right: 7px;
+}
+
+.tag__name:hover {
+  transform: scale(1.1);
+  background-color: #009fbf; /* Primary color for hover effect */
+  color: #fff; /* White text on hover */
+}
 .contact {
   padding: 10px 28px;
   background-color: white;
