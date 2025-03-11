@@ -55,7 +55,7 @@ span {
 
 /* Experience Section */
 .experience {
-  padding: 12% 18%;
+  padding: 10px 28px;
   background: black; 
 }
 
@@ -135,18 +135,24 @@ span {
 }
 
 /* Skills */ 
+.skills {
+  padding: 0% 18%;
+  background: white; 
+  align-content: center;
+}
+
 .card {
   width: 90%;
   height: 350px;
   margin: 30px;
-  max-width: 850px;
+  max-width: 1000px;
   background: black; 
-  padding: 10px;
   display: flex;
+  padding: 20px;
   flex-wrap: wrap;
-  color: #fff; /* White text for better contrast */
+  color: #fff; 
   border-radius: 15px;
-  box-shadow: 0 4px 8px #009fbf; /* Slightly darker shadow */
+  box-shadow: 0 4px 8px #009fbf; 
 }
 .card__tags {
   overflow: auto;
