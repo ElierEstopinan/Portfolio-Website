@@ -73,18 +73,97 @@ span {
   color: white;
 }
 
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px 12%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  color: #009fbf;
+  text-shadow: 0 0 25px #009fbf, 0 0 50px #009fbf;
+  transform: scale(1.1); 
+}
+
+span {
+  color: #009fbf;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  margin: 0 20px;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+  color: #009fbf;
+  border-bottom: 3px solid #009fbf;
+}
+
+.contact {
+  padding: 10px 28px;
+  background-color: white;
+  color: black;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact:hover {
+  background-color: #009fbf;
+  box-shadow: 0 0 25px #009fbf;
+  color: white;
+}
+
 /* Home Section */
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12% 10%;
-  gap: 10em;
+  gap: 2em;
   background: rgb(241, 241, 241); /* Light background */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 100px; /* Add margin to avoid overlap with fixed header */
 }
 
 .home-content {
   max-width: 800px;
+  text-align: left; /* Align text to the left */
+  flex: 1; /* Allow flex growth */
 }
 
 .home-content h3 {
@@ -102,22 +181,27 @@ span {
 }
 
 .btn-box {
-  width: 345px;
+  width: 100%; /* Full width on smaller screens */
   display: flex;
+  justify-content: center; /* Center buttons */
   gap: 2em;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.btn-1 {
+.btn-1, .btn-2 {
   padding: 15px 28px;
-  background-color: black;
-  color: white;
-  border: 2px solid transparent;
-  border-radius: 8px;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
+  border-radius: 8px;
   transition: 0.3s ease;
   cursor: pointer;
+}
+
+.btn-1 {
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
 }
 
 .btn-1:hover {
@@ -127,16 +211,9 @@ span {
 }
 
 .btn-2 {
-  padding: 15px 28px;
   background-color: #009fbf;
   color: white;
   border: 2px solid black;
-  border-radius: 8px;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  transition: 0.3s ease;
-  cursor: pointer;
 }
 
 .btn-2:hover {
@@ -144,11 +221,62 @@ span {
   color: black;
 }
 
+.img-box {
+  flex: 1; /* Allow flex growth */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .img-box img {
   position: relative;
-  width: 450px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 450px; /* Limit max width */
   box-shadow: 0 0 25px #009fbf, 0 0 50px #009fbf;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    padding: 8% 5%; /* Adjust padding for smaller screens */
+    gap: 2em; /* Reduce gap for smaller screens */
+  }
+
+  .home-content {
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .home-content h3 {
+    font-size: 32px; /* Adjust font size for smaller screens */
+  }
+
+  .home-content h1 {
+    font-size: 48px; /* Adjust font size for smaller screens */
+  }
+
+  .btn-box {
+    gap: 1em; /* Reduce gap for smaller screens */
+  }
+
+  .btn-1, .btn-2 {
+    width: 100%; /* Full width buttons on smaller screens */
+    margin-bottom: 1em; /* Add margin for spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h3 {
+    font-size: 24px; /* Further adjust font size for very small screens */
+  }
+
+  .home-content h1 {
+    font-size: 36px; /* Further adjust font size for very small screens */
+  }
+
+  .home-content p {
+    font-size: 16px; /* Adjust font size for very small screens */
+  }
 }
 
 /* Experience Section */
