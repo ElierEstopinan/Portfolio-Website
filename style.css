@@ -1,3 +1,4 @@
+/* General Styles */
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +8,7 @@
   list-style: none;
 }
 
+/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -25,7 +27,7 @@
   font-size: 25px;
   color: white;
   font-weight: 600;
-  transition: 0.03s ease;
+  transition: 0.3s ease;
 }
 
 .logo:hover {
@@ -53,160 +55,6 @@ span {
   border-bottom: 3px solid #009fbf;
 }
 
-/* Experience Section */
-.experience {
-  padding: 10px 28px;
-  background: black; 
-}
-
-.experience .heading {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 36px;
-  color: #fff; 
-}
-
-.experience .heading span {
-  color: #009fbf; 
-}
-
-.experience-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.experience-card {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  border-left: 5px solid #009fbf; /* Accent border */
-}
-
-.experience-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.company-name {
-  font-size: 18px;
-  color: #009fbf;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.date-range {
-  background-color: #333;
-  color: #e0e0e0;
-  font-size: 14px;
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.experience-description {
-  margin-top: 15px;
-}
-
-.experience-description ul {
-  padding-left: 20px;
-}
-
-.experience-description li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .experience-card {
-    padding: 15px;
-  }
-  .experience-title {
-    font-size: 18px;
-  }
-  .company-name {
-    font-size: 16px;
-  }
-}
-
-/* Skills */ 
-.skills {
-  padding: 0% 18%;
-  background: white; 
-  align-content: center;
-}
-
-.card {
-  width: 90%;
-  height: 350px;
-  margin: 30px;
-  max-width: 1000px;
-  background: black; 
-  display: flex;
-  padding: 20px;
-  flex-wrap: wrap;
-  color: #fff; 
-  border-radius: 15px;
-  box-shadow: 0 4px 8px #009fbf; 
-}
-.card__tags {
-  overflow: auto;
-  height: 80%;
-}
-.heading {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 36px;
-  color: #fff; 
-}
-
-.tag__name {
-  display: inline-block;
-  color: #333; /* Dark text color */
-  font-size: 1.1em;
-  background-color: #fff; /* White background */
-  padding: 6px 23px 9px;
-  border-radius: 70em;
-  margin: 8px 6px 8px 0;
-  margin-left: 0px;
-  position: relative;
-  text-transform: lowercase;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.tag__name::before,
-.tag__name::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 40%;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #009fbf; /* Primary color for the dots */
-}
-
-.tag__name::before {
-  left: 7px;
-}
-
-.tag__name::after {
-  right: 7px;
-}
-
-.tag__name:hover {
-  transform: scale(1.1);
-  background-color: #009fbf; /* Primary color for hover effect */
-  color: #fff; /* White text on hover */
-}
-
-/* Contact */
 .contact {
   padding: 10px 28px;
   background-color: white;
@@ -225,13 +73,14 @@ span {
   color: white;
 }
 
+/* Home Section */
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12% 18%;
   gap: 10em;
-  background: rgb(241, 241, 241);
+  background: rgb(241, 241, 241); /* Light background */
 }
 
 .home-content {
@@ -302,19 +151,192 @@ span {
   border-radius: 50%;
 }
 
-::-webkit-scrollbar {
-  width: 15px;
+/* Experience Section */
+.experience {
+  padding: 12% 18%;
+  background: black; /* Dark background */
 }
 
-::-webkit-scrollbar-thumb {
-  background: #009fbf;
+.experience .heading {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 36px;
+  color: #fff; /* White text */
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 50px;
+.experience .heading span {
+  color: #009fbf; /* Primary color */
 }
 
+.experience-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #009fbf; /* Accent border */
+  width: 100%;
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.company-name {
+  font-size: 18px;
+  color: #009fbf;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.date-range {
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 14px;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.experience-description {
+  margin-top: 15px;
+}
+
+.experience-description ul {
+  padding-left: 20px;
+}
+
+.experience-description li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 15px;
+  }
+  .experience-title {
+    font-size: 18px;
+  }
+  .company-name {
+    font-size: 16px;
+  }
+}
+
+/* Skills Section */
+.skills {
+  padding: 12% 18%;
+  background: rgb(241, 241, 241); /* Light background */
+}
+
+.skills .heading {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 36px;
+  color: #333; /* Dark text */
+}
+
+.skills .heading span {
+  color: #009fbf; /* Primary color */
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #009fbf; /* Accent border */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff; /* White text for better contrast */
+}
+
+.card__tags {
+  overflow: auto;
+  height: 80%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.tag__name {
+  display: inline-block;
+  color: #333; /* Dark text color */
+  font-size: 1.1em;
+  background-color: #fff; /* White background */
+  padding: 6px 23px 9px;
+  border-radius: 70em;
+  margin: 8px 6px 8px 0;
+  margin-left: 0px;
+  position: relative;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tag__name::before,
+.tag__name::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #009fbf; /* Primary color for the dots */
+}
+
+.tag__name::before {
+  left: 7px;
+}
+
+.tag__name::after {
+  right: 7px;
+}
+
+.tag__name:hover {
+  transform: scale(1.1);
+  background-color: #009fbf; /* Primary color for hover effect */
+  color: #fff; /* White text on hover */
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+  .title {
+    font-size: 18px;
+  }
+}
+
+/* Contact Form Section */
+.contact-form {
+  padding: 12% 18%;
+  background: rgb(241, 241, 241); /* Light background */
+}
 
 .contact-form h2 {
   text-align: center;
@@ -348,6 +370,7 @@ span {
   resize: none;
 }
 
+/* Footer Section */
 .footer {
   position: relative;
   bottom: 0;
@@ -414,7 +437,7 @@ span {
   color: white;
 }
 
-/* Projects */
+/* Projects Section */
 .projects {
   padding: 12% 18%;
   background: rgb(241, 241, 241);
@@ -468,4 +491,18 @@ span {
   border-radius: 5px;
   display: inline-block;
   margin-top: 10px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #009fbf;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
 }
