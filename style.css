@@ -63,13 +63,12 @@ span {
   color: white
 }
 .home{
-  width: 100%;
-  min-height: 110vh;
-  background: rgb(241, 241, 241);
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 12% 18%;
   gap: 10em;
-  padding: 30px 12%;
+  background: rgb(241, 241, 241);
 }
 .home-content {
   max-width: 800px;
@@ -124,8 +123,11 @@ span {
   color: black;
 }
 .img-box img{
-  border-radius: 50%;
+  position: relative;
   width: 550px;
+  box-shadow: 0 0 25px #009fbf,
+              0 0 50px #009fbf;
+  border-radius: 50%;
 }
 ::-webkit-scrollbar {
   width: 15px;
