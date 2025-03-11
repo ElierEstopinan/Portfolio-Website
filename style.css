@@ -78,7 +78,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12% 18%;
+  padding: 12% 10%;
   gap: 10em;
   background: rgb(241, 241, 241); /* Light background */
 }
@@ -146,14 +146,14 @@ span {
 
 .img-box img {
   position: relative;
-  width: 550px;
+  width: 450px;
   box-shadow: 0 0 25px #009fbf, 0 0 50px #009fbf;
   border-radius: 50%;
 }
 
 /* Experience Section */
 .experience {
-  padding: 12% 18%;
+  padding: 5% 10%;
   background: black; /* Dark background */
 }
 
@@ -235,7 +235,7 @@ span {
 
 /* Skills Section */
 .skills {
-  padding: 12% 18%;
+  padding: 5% 10%;
   background: rgb(241, 241, 241); /* Light background */
 }
 
@@ -334,7 +334,7 @@ span {
 
 /* Contact Form Section */
 .contact-form {
-  padding: 12% 18%;
+  padding: 1% 10%;
   background: rgb(241, 241, 241); /* Light background */
 }
 
