@@ -53,11 +53,93 @@ span {
   border-bottom: 3px solid #009fbf;
 }
 
+/* Experience Section */
+.experience {
+  padding: 12% 18%;
+  background: black; 
+}
+
+.experience .heading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 36px;
+  color: #fff; 
+}
+
+.experience .heading span {
+  color: #009fbf; 
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #009fbf; /* Accent border */
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.company-name {
+  font-size: 18px;
+  color: #009fbf;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.date-range {
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 14px;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.experience-description {
+  margin-top: 15px;
+}
+
+.experience-description ul {
+  padding-left: 20px;
+}
+
+.experience-description li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 15px;
+  }
+  .experience-title {
+    font-size: 18px;
+  }
+  .company-name {
+    font-size: 16px;
+  }
+}
+
 /* Skills */ 
 .card {
   width: 90%;
   height: 350px;
   margin: 30px;
+  max-width: 850px;
   background: black; 
   padding: 10px;
   display: flex;
@@ -70,10 +152,11 @@ span {
   overflow: auto;
   height: 80%;
 }
-.title {
-  font-size: 42px;
-  color: #009fbf;
+.heading {
   text-align: center;
+  margin: 20px 0;
+  font-size: 36px;
+  color: #fff; 
 }
 
 .tag__name {
@@ -116,6 +199,8 @@ span {
   background-color: #009fbf; /* Primary color for hover effect */
   color: #fff; /* White text on hover */
 }
+
+/* Contact */
 .contact {
   padding: 10px 28px;
   background-color: white;
@@ -224,38 +309,6 @@ span {
   width: 50px;
 }
 
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12% 18%;
-  gap: 10em;
-  background: black;
-}
-
-.about-img img {
-  position: relative;
-  width: 550px;
-  box-shadow: 0 0 25px #009fbf, 0 0 50px #009fbf;
-  border-radius: 50%;
-}
-
-.about-content h2 {
-  text-align: left;
-  color: white;
-  font-size: 42px;
-}
-
-.about-content h3 {
-  color: white;
-  font-size: 62px;
-}
-
-.about-content p {
-  color: white;
-  font-size: 20px;
-  margin: 2em 0 3em; 
-}
 
 .contact-form h2 {
   text-align: center;
