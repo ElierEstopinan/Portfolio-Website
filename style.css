@@ -58,9 +58,9 @@ span {
   transition: 0.3s ease;
 }
 .contact:hover {
-  background-color: #009fbf;;
+  background-color: #009fbf;
   box-shadow: 0 0 25px #009fbf;
-  color: white
+  color: white;
 }
 .home{
   display: flex;
@@ -199,4 +199,61 @@ span {
   border-radius: .8rem;
   margin: 1rem 0;
   resize: none;
+}
+.footer{
+ position: relative;
+ bottom: 0;
+ width: 100%;
+ padding: 40px 0;
+ background-color: black;
+}
+.footer .social{
+  text-align: center;
+  padding-bottom: 25px;
+  color: white;
+}
+.footer .social a{
+  font-size: 24px;
+  color: white;
+  border: 2px solid #009fbf;
+  width: 40px;
+  height: 40px;
+  line-height: 28px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  box-shadow: insert 0 0 10px #009fbf, 0 0 10px #009fbf;
+  transition: 0.3s ease;
+}
+.footer .social a:hover{
+  transform: scale(1.2)translateY(-10px);
+  color: #009fbf;
+  border: 2px solid #009fbf;
+}
+.footer ul {
+  margin-top: 0;
+  padding: 0 ;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+.footer ul li a{
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease;
+}
+.footer ul li a:hover{
+  border-bottom: 3px solid #009fbf;
+}
+.footer ul li{
+  display: inline-block;
+  margin: 0 15px;
+}
+.footer .copyright{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color:white;
 }
