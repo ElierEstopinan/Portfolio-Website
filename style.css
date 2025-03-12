@@ -157,6 +157,7 @@ span {
   justify-content: center; /* Center buttons */
   gap: 2em;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 30px;
 }
 
 .btn-1, .btn-2 {
@@ -215,7 +216,7 @@ span {
   }
 
   .home-content {
-    text-align: center; /* Center text on smaller screens */
+    text-align: left; /* Center text on smaller screens */
   }
 
   .home-content h3 {
@@ -318,6 +319,74 @@ span {
   margin-bottom: 15px; /* Increase margin-bottom */
   line-height: 1.6;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 20px;
+  }
+  .experience-title {
+    font-size: 20px;
+  }
+  .company-name {
+    font-size: 18px;
+  }
+}
+
+/* Education Section */
+.education {
+  padding: 5% 10%;
+  background: rgb(241, 241, 241); 
+}
+
+.education .heading {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 36px;
+  color: black; /* White text */
+}
+
+.education .heading span {
+  color: #009fbf; /* Primary color */
+}
+
+.education-container {
+  max-width: 1200px; /* Increase max-width */
+  margin: 0 auto;
+}
+
+.education-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 30px; /* Increase padding */
+  margin-bottom: 30px; /* Increase margin-bottom */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #009fbf; /* Accent border */
+  width: 100%;
+}
+
+.education-title {
+  font-size: 24px; /* Increase font size */
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.school {
+  font-size: 20px; /* Increase font size */
+  color: #009fbf;
+  font-weight: bold;
+  margin-top: 10px; /* Increase margin-top */
+}
+
+.graduated-date{
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 16px; /* Increase font size */
+  display: inline-block;
+  padding: 10px 15px; /* Increase padding */
+  border-radius: 5px;
+  margin-top: 15px; /* Increase margin-top */
 }
 
 @media (max-width: 768px) {
