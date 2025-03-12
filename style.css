@@ -691,7 +691,7 @@ span {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: #fff; /* White text */
+  color: white; /* White text */
 }
 
 .projects .heading span {
@@ -703,7 +703,7 @@ span {
 
 .card {
   position: relative;
-  background: #fff;
+  background: #1e1e1e;
   border-radius: 20px;
   height: 400px;
   margin: 20px 0;
@@ -715,7 +715,7 @@ span {
   position: absolute;
   height: 40%;
   width: 100%;
-  background: white;
+  background: #1e1e1e;
   border-radius: 20px 20px 0 0;
 }
 
@@ -750,7 +750,7 @@ section .card .pimage img {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  color: black;
+  color: white;
 }
 
 .name-project .name {
@@ -771,10 +771,10 @@ section .card .pimage img {
 }
 
 .card .pbutton button {
-  background: #7d2ae8;
+  background: #009fbf;
   outline: none;
   border: none;
-  color: #fff;
+  color: black;
   padding: 8px 22px;
   border-radius: 10px;
   font-size: 14px;
@@ -800,6 +800,11 @@ section .card .pimage img {
   width: 26px;
   border-radius: 25px;
   background: white;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: #009fbf; /* Change to blue for active bullet */
+  opacity: 1; /* Ensure active bullet is fully opaque */
 }
 
 .swiper-button-next, .swiper-button-prev {
