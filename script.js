@@ -16,17 +16,13 @@ function updateSlider() {
 }
 
 next.addEventListener("click", () => {
-    if (index < slides.length - 3) {
-        index++;
-        updateSlider();
-    }
+    index = (index + 1) % slides.length;
+    updateSlider();
 });
 
 prev.addEventListener("click", () => {
-    if (index > 0) {
-        index--;
-        updateSlider();
-    }
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
 });
 
 window.addEventListener("resize", updateSlider);
