@@ -465,11 +465,6 @@ span {
 }
 
 /* Skills Section */
-.skills {
-  padding: 5% 10%;
-  background: rgb(241, 241, 241); /* Light background */
-}
-
 .skills .heading {
   text-align: center;
   margin: 50px 0;
@@ -682,98 +677,117 @@ span {
   width: 50px;
 }
 
-/* Slider Container */
-.projects {
-  padding: 5% 10%;
-  background: black; /* Dark background */
+.swiper{
+  width: 950px;
 }
 
-.slider-container {
-  max-width: 1200px; /* Increase max-width to match other sections */
-  margin: 50px auto;
+.card{
   position: relative;
-  overflow: hidden;
-  padding: 0 10%; /* Add padding to match other sections */
+  background: #fff;
+  border-radius: 20px;
+  height: 400px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Slider Title */
-.slider-title {
-  font-size: 36px; /* Increase font size to match headings */
-  margin-bottom: 20px;
-  text-align: center; /* Center align the title */
-  color: #fff; /* White text color to match dark background */
-}
-
-/* Slider Track */
-.slider {
-  display: flex;
-  overflow: hidden;
+.card::before{
+  content: "";
+  position: absolute;
+  height: 40%;
   width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
 }
 
-.slider-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Slide Items */
-.slide {
-  height: 200px;
-  width: 200px; 
-  border-radius: 10px;
-  margin: 0 10px;
+.card .project-content{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px; /* Increase font size */
-  text-align: center;
-  border-left: 5px solid #009fbf; /* Accent border to match other cards */
-  background-color: #1e1e1e; /* Set background color */
-  color: #fff; /* White text color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
-}
-
-.view-project {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #009fbf; /* Primary color */
-  border: none;
-  border-radius: 5px;
-  color: #fff; /* White text for better contrast */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.view-project:hover {
-  background-color: #007a99; /* Darker shade for hover effect */
-}
-
-/* Slider Controls */
-.slider-controls {
+  padding: 30px;
   position: relative;
-  bottom: 0; /* Position the buttons at the bottom */
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 100;
+}
+
+section .card .pimage{
+  height: 140px;
+  width: 140px;
+  border-radius: 20%;
+  padding: 3px;
+  background: #7d2ae8;
+  margin-top: 30px;
+}
+
+section .card .pimage img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+  border: 3px solid #fff;
+}
+
+.card .name-project{
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px; /* Add margin to separate from the slider */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  color: black;
+} 
+
+.name-project .name{
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.slider-controls button {
-  background-color: #009fbf; /* Primary color */
+.name-project .description{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.card .pbutton{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card .pbutton button{
+  background: #7d2ae8;
+  outline: none;
   border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 50%;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  font-size: 16px;
-  color: #fff; /* White text for better contrast */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
 }
 
-.slider-controls button:hover {
-  background-color: #007a99; /* Darker shade for hover effect */
+.pbutton .viewproject {
+  background-color: #007bff;
+}
+
+.pbutton button:hover{
+  background: #6616d0;
+}
+
+.swiper-pagination{
+  position: absolute;
+  top: 450px;
+}
+
+.swiper-pagination-bullet{
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: white;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  opacity: 0.7;
+  color: white;
+  transition: all 0.3s ease;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  opacity: 1;
+  color: white;
 }
