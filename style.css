@@ -336,14 +336,14 @@ span {
 /* Education Section */
 .education {
   padding: 5% 10%;
-  background: rgb(241, 241, 241); 
+  background: black; 
 }
 
 .education .heading {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: black; /* White text */
+  color: white; /* White text */
 }
 
 .education .heading span {
@@ -389,11 +389,16 @@ span {
   margin-top: 15px; /* Increase margin-top */
 }
 
+.certifications {
+  padding: 5% 10%;
+  background: black; 
+}
+
 .certifications .heading {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: black; /* White text */
+  color: white; /* White text */
 }
 
 .certifications .heading span {
@@ -406,6 +411,7 @@ span {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Adjust gap between cards as needed */
+    color: black;
 }
 
 /* Certification Card */
@@ -465,11 +471,16 @@ span {
 }
 
 /* Skills Section */
+.skills {
+  padding: 5% 10%;
+  background: black; /* Dark background */
+}
+
 .skills .heading {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: #333; /* Dark text */
+  color: white; /* Dark text */
 }
 
 .skills .heading span {
@@ -663,8 +674,6 @@ span {
   color: white;
 }
 
-/* Project */
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 15px;
@@ -684,10 +693,10 @@ span {
 /* New CSS Code */
 .projects {
   padding: 5% 10%;
-  background: black; /* Dark background */
+  background: #fff; /* Dark background */
 }
 
-.projects .heading {
+.projects .heading { 
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
@@ -745,7 +754,9 @@ section .card .pimage img {
   border: 3px solid #fff;
 }
 
-.card .name-project {
+.name-project .name {
+  font-size: 20px;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -753,14 +764,10 @@ section .card .pimage img {
   color: white;
 }
 
-.name-project .name {
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .name-project .description {
   font-size: 15px;
   font-weight: 500;
+  color: white;
 }
 
 .card .pbutton {
@@ -769,7 +776,6 @@ section .card .pimage img {
   justify-content: space-around;
   margin-top: 20px;
 }
-
 .card .pbutton button {
   background: #009fbf;
   outline: none;
@@ -780,40 +786,46 @@ section .card .pimage img {
   font-size: 14px;
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 2px solid black;
 }
-
-.pbutton .viewproject {
-  background-color: #007bff;
-}
-
 .pbutton button:hover {
-  background: #6616d0;
-}
-
-.swiper-pagination {
-  position: absolute;
-  top: 450px;
-}
-
-.swiper-pagination-bullet {
-  height: 7px;
-  width: 26px;
-  border-radius: 25px;
   background: white;
-  opacity: 0.5;
+  border: 2px solid black;
+  color: black;
 }
-.swiper-pagination-bullet-active {
-  background: #009fbf; /* Change to blue for active bullet */
-  opacity: 1; /* Ensure active bullet is fully opaque */
-}
-
 .swiper-button-next, .swiper-button-prev {
   opacity: 0.7;
-  color: white;
   transition: all 0.3s ease;
+  color: #009fbf; /* Blue color */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-next {
+  right: 10px;
+  color: #009fbf;
+}
+
+.swiper-button-prev {
+  left: 10px;
+  color: #009fbf;
 }
 
 .swiper-button-next:hover, .swiper-button-prev:hover {
   opacity: 1;
-  color: white;
+  color: white; /* White color on hover */
+}
+
+/* Swiper Pagination Bullets */
+.swiper-pagination-bullet {
+  background: #009fbf; /* Blue color */
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet:hover {
+  background: white; /* White color on hover */
+  opacity: 1;
 }
