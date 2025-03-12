@@ -124,7 +124,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12% 10%;
+  padding: 10% 10%; /* Adjust padding for consistency */
   gap: 2em;
   background: rgb(241, 241, 241); /* Light background */
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -138,11 +138,11 @@ span {
 }
 
 .home-content h3 {
-  font-size: 42px;
+  font-size: 36px; /* Adjust font size for consistency */
 }
 
 .home-content h1 {
-  font-size: 62px;
+  font-size: 56px; /* Adjust font size for consistency */
   line-height: 1.2; 
 }
 
@@ -502,7 +502,7 @@ span {
 
 /* Contact Form Section */
 .contact-form {
-  padding: 1% 10%;
+  padding: 5% 10%; /* Adjust padding for consistency */
   background: rgb(241, 241, 241); /* Light background */
 }
 
@@ -605,62 +605,6 @@ span {
   color: white;
 }
 
-/* Projects Section */
-.projects {
-  padding: 12% 18%;
-  background: rgb(241, 241, 241);
-}
-
-.projects .heading {
-  text-align: center;
-  margin: 50px 0;
-  font-size: 36px;
-}
-
-.projects .heading span {
-  color: #009fbf;
-}
-
-.projects-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.project-card {
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-  width: 300px;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.project-card h3 {
-  margin: 20px 0 10px;
-}
-
-.project-card p {
-  color: #777;
-}
-
-.project-card .btn-2 {
-  background-color: #009fbf;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 10px;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 15px;
@@ -673,4 +617,100 @@ span {
 ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.6);
   width: 50px;
+}
+
+/* Slider Container */
+.projects {
+  padding: 5% 10%;
+  background: black; /* Dark background */
+}
+
+.slider-container {
+  max-width: 1200px; /* Increase max-width to match other sections */
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0 10%; /* Add padding to match other sections */
+}
+
+/* Slider Title */
+.slider-title {
+  font-size: 36px; /* Increase font size to match headings */
+  margin-bottom: 20px;
+  text-align: center; /* Center align the title */
+  color: #fff; /* White text color to match dark background */
+}
+
+/* Slider Track */
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Slide Items */
+.slide {
+  height: 200px;
+  width: 200px; 
+  border-radius: 10px;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px; /* Increase font size */
+  text-align: center;
+  border-left: 5px solid #009fbf; /* Accent border to match other cards */
+  background-color: #1e1e1e; /* Set background color */
+  color: #fff; /* White text color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
+}
+
+.view-project {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #009fbf; /* Primary color */
+  border: none;
+  border-radius: 5px;
+  color: #fff; /* White text for better contrast */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-project:hover {
+  background-color: #007a99; /* Darker shade for hover effect */
+}
+
+/* Slider Controls */
+.slider-controls {
+  position: relative;
+  bottom: 0; /* Position the buttons at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px; /* Add margin to separate from the slider */
+}
+
+.slider-controls button {
+  background-color: #009fbf; /* Primary color */
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff; /* White text for better contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
+}
+
+.slider-controls button:hover {
+  background-color: #007a99; /* Darker shade for hover effect */
 }
