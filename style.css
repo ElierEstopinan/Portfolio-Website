@@ -400,23 +400,36 @@ span {
   color: #009fbf; /* Primary color */
 }
 
-.certifications-container {
-  max-width: 1200px; /* Increase max-width */
-  margin: 0 auto;
+/* Certification Container */
+.certification-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust gap between cards as needed */
 }
 
+/* Certification Card */
 .certification-card {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 30px; /* Increase padding */
-  margin-bottom: 30px; /* Increase margin-bottom */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  border-left: 5px solid #009fbf; /* Accent border */
-  width: 100%;
+    flex: 1 1 200px; /* Allow cards to grow and shrink, with a base width of 200px */
+    max-width: 200px; /* Ensure cards do not exceed 200px in width */
+    height: 200px;
+    border-radius: 10px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px; /* Increase font size */
+    text-align: center;
+    border-left: 5px solid #009fbf; /* Accent border to match other cards */
+    background-color: #1e1e1e; /* Set background color */
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
 }
 
 .certification-title {
-  font-size: 24px; /* Increase font size */
+  font-size: 20px; /* Increase font size */
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
