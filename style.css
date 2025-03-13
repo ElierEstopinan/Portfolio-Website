@@ -367,6 +367,7 @@ span {
   height: 400px;
   margin: 20px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #009fbf; /* Accent border */
 }
 
 .card::before {
@@ -392,7 +393,7 @@ section .card .pimage {
   width: 140px;
   border-radius: 20%;
   padding: 3px;
-  background: #7d2ae8;
+  background: #009fbf;
   margin-top: 30px;
 }
 
@@ -486,14 +487,14 @@ section .card .pimage img {
 /* Education Section */
 .education {
   padding: 5% 10%;
-  background: #ffffff; 
+  background: #e0e0e0; 
 }
 
 .education .heading {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: white; /* White text */
+  color: black; 
 }
 
 .education .heading span {
@@ -611,7 +612,7 @@ section .card .pimage img {
 /* Contact Form Section */
 .contact-form {
   padding: 5% 10%; /* Adjust padding for consistency */
-  background:black; /* Light background */
+  background: #e0e0e0; /* Light background */
 }
 
 .contact-form h2 {
@@ -652,7 +653,7 @@ section .card .pimage img {
   bottom: 0;
   width: 100%;
   padding: 40px 0;
-  background-color: black;
+  background-color:  rgba(0, 0, 0, 0.8);
 }
 
 .footer .social {
@@ -763,6 +764,8 @@ section .card .pimage img {
   flex: 1;
   min-width: 300px;
   max-width: 500px;
+  border-left: 5px solid #009fbf; /* Accent border */
+
 }
 
 .experience-sub-title {
