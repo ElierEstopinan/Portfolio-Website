@@ -417,7 +417,7 @@ section .card .pimage img {
 .name-project .description {
   font-size: 15px;
   font-weight: 500;
-  color: white;
+  color: #e0e0e0;
 }
 
 .card .pbutton {
@@ -798,7 +798,7 @@ article h3 {
 
 article p {
   font-size: 1rem;
-  color: #009fbf;
+  color: #e0e0e0;
   margin: 0;
 }
 
