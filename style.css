@@ -762,35 +762,73 @@ article p {
 }
 
 /* Education and Certifications*/
-.education{
+/* First, ensure the education section has proper positioning */
+.education {
   background-color: #e0e0e0;
-}
-
-.etimeline{
+  position: relative;
+  overflow: visible; /* This ensures child elements can extend beyond */
+  padding: 20px 0;
+ }
+ /* Reset the timeline container */
+ .etimeline {
   position: relative;
   max-width: 1200px;
   margin: 100px auto;
-}
-
-.e_container{
-  padding: 10px;
+  overflow: visible; /* Allow the line to be visible */
+ }
+ /* This creates the vertical line */
+ .etimeline::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #009fbf;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  height: 100%;
+  z-index: 1; /* Higher z-index to ensure visibility */
+ }
+ /* Fix container positioning */
+ .e_container {
+  padding: 10px 40px;
   position: relative;
   width: 50%;
-  background: #009fbf;
-}
-.text-box{
+  box-sizing: border-box;
+ }
+ /* Fix left and right containers */
+ .left-container {
+  left: 0;
+ }
+ .right-container {
+  left: 50%;
+ }
+ /* Fix the image positioning */
+ .e_container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 4px solid #009fbf;
+  z-index: 10;
+ }
+ .left-container img {
+  right: -24px;
+  top: 32px;
+ }
+ .right-container img {
+  left: -24px;
+  top: 32px;
+ }
+ 
+ .text-box {
   padding: 20px 30px;
   background: #1e1e1e;
   position: relative;
   border-radius: 6px;
   font-size: 15px;
-}
-.left-container{
-  left: 0;
+  color: white;
   border-left: 5px solid #009fbf;
-}
-
-.right-container{
-  left: 50%;
-  border-left: 5px solid #009fbf;
-}
+  z-index: 5;
+ }
+ 
