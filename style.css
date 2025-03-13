@@ -133,7 +133,7 @@ span {
 
 .home-content {
   max-width: 800px;
-  text-align: left; /* Align text to the left */
+  text-align: center; /* Align text to the left */
   flex: 1; /* Allow flex growth */
 }
 
@@ -530,17 +530,18 @@ section .card .pimage img {
 }
 
 .certification-title {
-  font-size: 20px; /* Increase font size */
+  font-size: 1.25; /* Increase font size */
   font-weight: bold;
   color: #ffffff;
-  text-transform: uppercase;
-}
+  padding: 5px 10px; /* Increase padding */
 
+}
 .organazation {
-  font-size: 20px; /* Increase font size */
+  font-size: 1rem; /* Increase font size */
   color: #009fbf;
-  font-weight: bold;
   margin-top: 10px; /* Increase margin-top */
+  padding: 10px 15px; /* Increase padding */
+
 }
 
 .completed-date{
