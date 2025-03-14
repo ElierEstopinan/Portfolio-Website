@@ -803,7 +803,8 @@ article p {
  .right-container {
   left: 50%;
  }
- /* Fix the image positioning */
+ 
+ /* Image positioning */
  .e_container img {
   position: absolute;
   width: 40px;
@@ -813,11 +814,11 @@ article p {
   z-index: 10;
  }
  .left-container img {
-  right: -24px;
+  right: -20px;
   top: 32px;
  }
  .right-container img {
-  left: -24px;
+  left: -20px;
   top: 32px;
  }
  
