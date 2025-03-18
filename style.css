@@ -344,6 +344,7 @@ span {
 }
 
 .psection__text__p1 {
+  font-weight: bold;
   text-align: center;
   font-size: 1.5rem;
   color: black;
@@ -762,14 +763,27 @@ article p {
 }
 
 /* Education and Certifications*/
-/* First, ensure the education section has proper positioning */
 .education {
   background-color: #e0e0e0;
   position: relative;
   overflow: visible; /* This ensures child elements can extend beyond */
   padding: 20px 0;
  }
- /* Reset the timeline container */
+
+ .edu__text__p1{
+  font-weight: bold;
+  text-align:center;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.edu_title {
+  text-align: center;
+  font-size: 3rem;
+  color: #009fbf;
+  margin-bottom: 2rem;
+}
+
  .etimeline {
   position: relative;
   max-width: 1200px;
