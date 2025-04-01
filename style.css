@@ -766,13 +766,13 @@ article p {
 .education {
   background-color: #e0e0e0;
   position: relative;
-  overflow: visible; /* This ensures child elements can extend beyond */
+  overflow: visible;
   padding: 20px 0;
- }
+}
 
- .edu__text__p1{
+.edu__text__p1 {
   font-weight: bold;
-  text-align:center;
+  text-align: center;
   font-size: 1.5rem;
   color: black;
 }
@@ -784,14 +784,15 @@ article p {
   margin-bottom: 2rem;
 }
 
- .etimeline {
+.etimeline {
   position: relative;
   max-width: 1200px;
   margin: 100px auto;
-  overflow: visible; /* Allow the line to be visible */
- }
- /* This creates the vertical line */
- .etimeline::before {
+  overflow: visible;
+}
+
+/* Timeline vertical line with animation */
+.etimeline::before {
   content: '';
   position: absolute;
   width: 6px;
@@ -801,42 +802,93 @@ article p {
   left: 50%;
   margin-left: -3px;
   height: 100%;
-  z-index: 1; /* Higher z-index to ensure visibility */
- }
- /* Fix container positioning */
- .e_container {
+  z-index: 0;
+  animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Container settings with animation */
+.e_container {
   padding: 10px 40px;
   position: relative;
   width: 50%;
   box-sizing: border-box;
- }
- /* Fix left and right containers */
- .left-container {
+  opacity: 0;
+}
+
+/* Animation timing for each container */
+.e_container:nth-child(1) {
+  animation: movedown 1s linear forwards;
+  animation-delay: 0.5s;
+}
+
+.e_container:nth-child(2) {
+  animation: movedown 1s linear forwards;
+  animation-delay: 1.5s;
+}
+
+.e_container:nth-child(3) {
+  animation: movedown 1s linear forwards;
+  animation-delay: 2.5s;
+}
+
+.e_container:nth-child(4) {
+  animation: movedown 1s linear forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes movedown {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Left and right container positioning */
+.left-container {
   left: 0;
- }
- .right-container {
+}
+
+.right-container {
   left: 50%;
- }
- 
- /* Image positioning */
- .e_container img {
+}
+
+/* Circle icon styling */
+.e_container img {
   position: absolute;
   width: 40px;
   border-radius: 50%;
   background-color: white;
   border: 4px solid #009fbf;
   z-index: 10;
- }
- .left-container img {
+}
+
+.left-container img {
   right: -20px;
-  top: 32px;
- }
- .right-container img {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-container img {
   left: -20px;
-  top: 32px;
- }
- 
- .right-text-box {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Text box styling for right and left containers */
+.right-text-box {
   padding: 20px 30px;
   background: #1e1e1e;
   position: relative;
@@ -844,9 +896,10 @@ article p {
   font-size: 15px;
   color: white;
   border-left: 5px solid #009fbf;
-  z-index: 5;
- }
- .left-text-box {
+  z-index: 15;
+}
+
+.left-text-box {
   padding: 20px 30px;
   background: #1e1e1e;
   position: relative;
@@ -854,33 +907,70 @@ article p {
   font-size: 15px;
   color: white;
   border-right: 5px solid #009fbf;
-  z-index: 5;
- }
+  z-index: 15;
+}
 
+/* Arrow styling for connecting to timeline */
 .left-container-arrow {
   height: 0;
   width: 0;
   position: absolute;
-  top: 28px;
-  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 16;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-right: 15px solid #009fbf; 
-  left: -15px; 
+  border-right: 15px solid #009fbf;
+  left: -15px;
 }
-
 
 .right-container-arrow {
   height: 0;
   width: 0;
   position: absolute;
-  top: 28px;
-  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 16;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-left: 15px solid #009fbf; 
-  right: -15px; 
+  border-left: 15px solid #009fbf;
+  right: -15px;
 }
 
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+  .etimeline {
+    margin: 50px auto;
+  }
+  
+  .etimeline::before {
+    left: 31px;
+  }
+  
+  .e_container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  
+  .right-container {
+    left: 0;
+  }
+  
+  .left-container img, .right-container img {
+    left: 10px;
+  }
+  
+  .left-text-box, .right-text-box {
+    border-left: 5px solid #009fbf;
+    border-right: none;
+  }
+  
+  .left-container-arrow, .right-container-arrow {
+    border-right: 15px solid #009fbf;
+    border-left: 0;
+    left: -15px;
+  }
+}
 
  
