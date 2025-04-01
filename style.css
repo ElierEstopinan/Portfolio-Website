@@ -836,7 +836,7 @@ article p {
   top: 32px;
  }
  
- .text-box {
+ .right-text-box {
   padding: 20px 30px;
   background: #1e1e1e;
   position: relative;
@@ -846,4 +846,41 @@ article p {
   border-left: 5px solid #009fbf;
   z-index: 5;
  }
+ .left-text-box {
+  padding: 20px 30px;
+  background: #1e1e1e;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  border-right: 5px solid #009fbf;
+  z-index: 5;
+ }
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #009fbf; 
+  left: -15px; 
+}
+
+
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #009fbf; 
+  right: -15px; 
+}
+
+
  
