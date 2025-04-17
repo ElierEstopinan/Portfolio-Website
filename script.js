@@ -37,9 +37,7 @@ if (mobileMenu && navList) {
 // EmailJS Integration
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize EmailJS
-    (function () {
-        emailjs.init("oot9xAy6I8e6pMeqw");
-    })();
+    emailjs.init("oot9xAy6I8e6pMeqw");
 
     // Handle form submission
     const contactForm = document.getElementById('contact-form');
@@ -49,41 +47,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Show loading state
             const submitButton = this.querySelector('input[type="submit"]');
-            const originalButtonText = submitButton.value;
             submitButton.value = 'Sending...';
             submitButton.disabled = true;
 
             // Collect form data
-            const formData = {
+            const templateParams = {
+                to_name: "Elier",
                 from_name: document.getElementById('full-name').value,
                 reply_to: document.getElementById('email').value,
                 phone_number: document.getElementById('phone').value,
                 subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
+                message: document.getElementById('message').value
             };
 
-            // Validate required fields
-            if (!formData.from_name || !formData.reply_to || !formData.message) {
-                alert("Please fill out all required fields (Name, Email, and Message).");
-                submitButton.value = originalButtonText;
-                submitButton.disabled = false;
-                return;
-            }
-
             // Send email using EmailJS
-            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", formData)
-                .then(function (response) {
+            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
+                .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
-                    contactForm.reset(); // Reset form after successful submission
+                    contactForm.reset();
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.error("ERROR:", error);
                     alert('Failed to send message. Please try again later.');
                 })
                 .finally(function() {
-                    // Reset button state
-                    submitButton.value = originalButtonText;
+                    submitButton.value = 'Send Message';
                     submitButton.disabled = false;
                 });
         });
