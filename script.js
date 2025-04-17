@@ -36,30 +36,20 @@ if (mobileMenu && navList) {
 
 // EmailJS Integration
 document.addEventListener('DOMContentLoaded', function () {
-    // Check if EmailJS is loaded and initialize it
-    function initializeEmailJS() {
-        if (typeof emailjs !== 'undefined') {
-            try {
-                // IMPORTANT: You need to replace this with your ACTUAL public key from EmailJS dashboard
-                // Go to https://dashboard.emailjs.com/admin/account
-                // Look for "Public Key" - it should look something like "user_aBcDeFgHiJkLmNoPqR"
-                // The key "oot9xAy6I8e6pMeqw" is not working because it's invalid
-                emailjs.init("YOUR_ACTUAL_PUBLIC_KEY");
+    // Initialize EmailJS with your public key
+    // IMPORTANT: Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS dashboard
+    // You can find this at https://dashboard.emailjs.com/admin/account
+    (function() {
+        // Add a small delay to ensure EmailJS is fully loaded
+        setTimeout(function() {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("YOUR_PUBLIC_KEY");
                 console.log("EmailJS initialized successfully");
-                return true;
-            } catch (error) {
-                console.error("Error initializing EmailJS:", error);
-                return false;
+            } else {
+                console.error("EmailJS failed to load");
             }
-        } else {
-            console.log("EmailJS not loaded yet, will retry in 500ms");
-            setTimeout(initializeEmailJS, 500);
-            return false;
-        }
-    }
-
-    // Try to initialize EmailJS
-    initializeEmailJS();
+        }, 1000);
+    })();
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -70,24 +60,32 @@ document.addEventListener('DOMContentLoaded', function () {
             submitButton.value = 'Sending...';
             submitButton.disabled = true;
 
-            // We'll use the form directly with emailjs.sendForm
-            // Make sure your form fields have the correct name attributes that match your EmailJS template
-            // For example, if your template uses {{from_name}}, the input should have name="from_name"
+            // Create a simple object with form data
+            const formData = {
+                from_name: document.getElementById('full-name').value,
+                reply_to: document.getElementById('email').value,
+                phone_number: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_name: "Elier"
+            };
 
-            // Send email using EmailJS with updated syntax
-            try {
-                console.log("Attempting to send email with EmailJS...");
+            // Check if EmailJS is loaded
+            if (typeof emailjs === 'undefined') {
+                console.error("EmailJS is not loaded. Please check your internet connection and try again.");
+                alert("Unable to send message. Email service is not available. Please try again later or contact directly via email.");
+                submitButton.value = 'Send Message';
+                submitButton.disabled = false;
+                return;
+            }
 
-                // Make sure EmailJS is available
-                if (typeof emailjs === 'undefined') {
-                    throw new Error("EmailJS is not defined. The library may not be loaded properly.");
-                }
+            // IMPORTANT: Replace these with your actual service ID and template ID
+            // You can find these at https://dashboard.emailjs.com/admin
+            const serviceID = "service_id";  // Replace with your actual service ID
+            const templateID = "template_id"; // Replace with your actual template ID
 
-                // IMPORTANT: Replace these with your actual service ID and template ID from EmailJS dashboard
-                // You can find these at https://dashboard.emailjs.com/admin
-                // Your service ID should look like "service_xxxxxxx"
-                // Your template ID should look like "template_xxxxxxx"
-                emailjs.sendForm("portfoliosite_7nlmka8", "template_gf75cnl", contactForm)
+            // Send the email
+            emailjs.send(serviceID, templateID, formData)
                 .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
@@ -95,18 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(function(error) {
                     console.error("ERROR:", error);
-                    alert('Failed to send message. Please try again later.');
+                    alert('Failed to send message. Please try again later or contact directly via email.');
                 })
                 .finally(function() {
                     submitButton.value = 'Send Message';
                     submitButton.disabled = false;
                 });
-            } catch (error) {
-                console.error("Error sending email:", error);
-                alert('Failed to send message: ' + error.message);
-                submitButton.value = 'Send Message';
-                submitButton.disabled = false;
-            }
         });
     }
 });

@@ -173,24 +173,8 @@
     <!-- Swiper JS Project Sections -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- EmailJS SDK - Using the official CDN with correct MIME type -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <!-- Fallback for EmailJS in case the CDN fails -->
-    <script type="text/javascript">
-        // Check if EmailJS loaded correctly
-        window.addEventListener('load', function() {
-            if (typeof emailjs === 'undefined') {
-                console.log('EmailJS failed to load from CDN, trying alternative source...');
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-                script.onload = function() {
-                    console.log('EmailJS loaded from alternative source');
-                };
-                document.head.appendChild(script);
-            }
-        });
-    </script>
+    <!-- EmailJS SDK - Using the most reliable CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Main Script -->
     <script src="./script.js"></script>
@@ -351,6 +335,13 @@
             <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn-1">
         </form>
+
+        <!-- Alternative Contact Method -->
+        <div class="alternative-contact">
+            <p>If the contact form doesn't work, you can also reach me directly at:
+               <a href="mailto:elier.estopinan@gmail.com">elier.estopinan@gmail.com</a>
+            </p>
+        </div>
     </section>
 
 
