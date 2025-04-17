@@ -36,17 +36,28 @@ if (mobileMenu && navList) {
 
 // EmailJS Integration
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize EmailJS
-    try {
-        (function() {
-            emailjs.init({
-                publicKey: "oot9xAy6I8e6pMeqw"
-            });
-            console.log("EmailJS initialized successfully");
-        })();
-    } catch (error) {
-        console.error("Error initializing EmailJS:", error);
+    // Check if EmailJS is loaded and initialize it
+    function initializeEmailJS() {
+        if (typeof emailjs !== 'undefined') {
+            try {
+                emailjs.init({
+                    publicKey: "oot9xAy6I8e6pMeqw"
+                });
+                console.log("EmailJS initialized successfully");
+                return true;
+            } catch (error) {
+                console.error("Error initializing EmailJS:", error);
+                return false;
+            }
+        } else {
+            console.log("EmailJS not loaded yet, will retry in 500ms");
+            setTimeout(initializeEmailJS, 500);
+            return false;
+        }
     }
+
+    // Try to initialize EmailJS
+    initializeEmailJS();
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -67,16 +78,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: document.getElementById('message').value
             };
 
-            // Send email using EmailJS with updated v4.0 syntax
+            // Send email using EmailJS with updated syntax
             try {
                 console.log("Attempting to send email with EmailJS...");
+
+                // Make sure EmailJS is available
                 if (typeof emailjs === 'undefined') {
                     throw new Error("EmailJS is not defined. The library may not be loaded properly.");
                 }
 
-                emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams, {
-                    publicKey: "oot9xAy6I8e6pMeqw"
-                })
+                // Use the simpler send method that doesn't require the publicKey parameter again
+                emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
                 .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
