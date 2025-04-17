@@ -36,10 +36,6 @@ if (mobileMenu && navList) {
 
 // EmailJS Integration
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize EmailJS
-    emailjs.init("oot9xAy6I8e6pMeqw");
-
-    // Handle form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -61,8 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Send email using EmailJS
-            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
-                .then(function(response) {
+            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams).then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
                     contactForm.reset();
