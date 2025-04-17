@@ -56,8 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: document.getElementById('message').value
             };
 
-            // Send email using EmailJS
-            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams).then(function(response) {
+            // Send email using EmailJS with updated v4.0 syntax
+            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
+                .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
                     contactForm.reset();

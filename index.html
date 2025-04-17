@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>        
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/4.0.0/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/4.0.0/email.min.js" defer></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("oot9xAy6I8e6pMeqw");
+            // Initialize with your public key
+            emailjs.init({
+                publicKey: "oot9xAy6I8e6pMeqw"
+            });
         })();
     </script>
 </head>
@@ -43,12 +47,12 @@
                 <button class="btn-1"> Download CV</button>
                 <button class="btn-2"> Contact me</button>
             </div>
-            
+
             <div class="social">
               <a href="https://www.linkedin.com/in/elier-estopinan-132a491b2/"><i class='bx bxl-linkedin-square'></i></a>
               <a href="https://github.com/ElierEstopinan/"><i class='bx bxl-github'></i></a>
             </div>
-        
+
         </div>
         <div class="img-box">
             <img src="profile_pic.jpeg" alt="">
@@ -67,7 +71,7 @@
         </div>
     </section>
 
-    
+
      <!-- Projects Section -->
      <section class="projects" id="projects">
         <p class="psection__text__p1">Browse My Recent</p>
@@ -105,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- P3 -->
                 <div class="swiper-slide card">
                     <div class="project-content">
@@ -121,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- P4 -->
                 <div class="swiper-slide card">
                     <div class="project-content">
@@ -137,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- P5 -->
                 <div class="swiper-slide card">
                     <div class="project-content">
@@ -153,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- P6 -->
                 <div class="swiper-slide card">
                     <div class="project-content">
@@ -179,7 +183,7 @@
     <!-- Swiper JS Project Sections -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
- 
+
        <!-- Skills Section -->
     <section class= experience id="experience">
       <p class="section__text__p1">Explore My</p>
@@ -276,11 +280,11 @@
     </section>
 
      <!-- Education and Certifications -->
-     <section class="education" id="education"> 
+     <section class="education" id="education">
       <p class="edu__text__p1">Timeline of</p>
-      <h1 class="edu_title">Education</h1> 
+      <h1 class="edu_title">Education</h1>
         <div class="etimeline">
-    
+
           <div class="e_container right-container">
             <image src="assets/az-900-badge.png"> </image>
             <div class="right-text-box">
@@ -315,8 +319,8 @@
 
       </div>
 
-     </section> 
-  
+     </section>
+
 
     <!-- Contact Form Section -->
       <section class="contact-form" id="contact-form-section">
@@ -334,7 +338,7 @@
             <input type="submit" value="Send Message" class="btn-1">
         </form>
     </section>
-    
+
 
     <!-- Footer Section -->
     <footer class="footer">
