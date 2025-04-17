@@ -36,6 +36,17 @@ if (mobileMenu && navList) {
 
 // EmailJS Integration
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize EmailJS
+    try {
+        (function() {
+            emailjs.init({
+                publicKey: "oot9xAy6I8e6pMeqw"
+            });
+            console.log("EmailJS initialized successfully");
+        })();
+    } catch (error) {
+        console.error("Error initializing EmailJS:", error);
+    }
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -57,7 +68,15 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Send email using EmailJS with updated v4.0 syntax
-            emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
+            try {
+                console.log("Attempting to send email with EmailJS...");
+                if (typeof emailjs === 'undefined') {
+                    throw new Error("EmailJS is not defined. The library may not be loaded properly.");
+                }
+
+                emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams, {
+                    publicKey: "oot9xAy6I8e6pMeqw"
+                })
                 .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');
@@ -71,6 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.value = 'Send Message';
                     submitButton.disabled = false;
                 });
+            } catch (error) {
+                console.error("Error sending email:", error);
+                alert('Failed to send message: ' + error.message);
+                submitButton.value = 'Send Message';
+                submitButton.disabled = false;
+            }
         });
     }
 });
