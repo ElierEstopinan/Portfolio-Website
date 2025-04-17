@@ -582,69 +582,140 @@ section .card .pimage img {
   margin-top: 15px; /* Increase margin-top */
 }
 
-/* Contact Form Section */
-.contact-form {
-  padding: 5% 10%; /* Adjust padding for consistency */
-  background: #e0e0e0; /* Light background */
+/* Contact Section */
+.contact-section {
+  padding: 5% 10%;
+  background: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Alternative Contact Method */
-.alternative-contact {
-  margin-top: 30px;
+.contact-section .heading {
   text-align: center;
-  padding: 15px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  border-left: 5px solid #009fbf;
-}
-
-.alternative-contact p {
-  font-size: 16px;
-  color: #333;
-}
-
-.alternative-contact a {
-  color: #009fbf;
-  font-weight: 600;
-  text-decoration: underline;
-  transition: 0.3s ease;
-}
-
-.alternative-contact a:hover {
-  color: #007a99;
-}
-
-.contact-form h2 {
-  text-align: center;
-  margin-top: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 2rem;
   font-size: 36px;
 }
 
-.contact-form form {
-  max-width: 50em;
-  margin: 1rem auto;
-  text-align: center;
-  margin-bottom: 3em;
+.contact-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #009fbf;
 }
 
-.contact-form form .input-box {
+.contact-icon {
+  font-size: 3rem;
+  color: #009fbf;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.email-link {
+  color: #009fbf;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.email-link:hover {
+  color: white;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px #009fbf;
+}
+
+.social-links {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.social-links h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.contact-form form .input-box input,
-.contact-form form textarea {
-  width: 100%;
-  padding: 1.5em;
-  font-size: 18px;
-  color: #009fbf;
-  background: rgb(241, 241, 241);
-  border-radius: .8rem;
-  margin: 1rem 0;
-  resize: none;
+.social-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
+
+.social-icon i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #009fbf;
+  transition: 0.3s ease;
+}
+
+.social-icon span {
+  color: #333;
+  font-weight: 500;
+}
+
+.social-icon:hover i {
+  transform: scale(1.2);
+  color: #007a99;
+}
+
+.social-icon:hover span {
+  color: #009fbf;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Additional styles can be added here if needed */
 
 /* Footer Section */
 .footer {
