@@ -9,11 +9,16 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>        
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("oot9xAy6I8e6pMeqw");  
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+    publicKey: "oot9xAy6I8e6pMeqw",
+    });
     })();
-</script>
+    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -333,6 +338,7 @@
             <input type="submit" value="Send Message" class="btn-1">
         </form>
     </section>
+    
 
     <!-- Footer Section -->
     <footer class="footer">
