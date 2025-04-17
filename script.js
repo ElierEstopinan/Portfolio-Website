@@ -40,9 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeEmailJS() {
         if (typeof emailjs !== 'undefined') {
             try {
-                emailjs.init({
-                    publicKey: "oot9xAy6I8e6pMeqw"
-                });
+                // IMPORTANT: You need to replace this with your ACTUAL public key from EmailJS dashboard
+                // Go to https://dashboard.emailjs.com/admin/account
+                // Look for "Public Key" - it should look something like "user_aBcDeFgHiJkLmNoPqR"
+                // The key "oot9xAy6I8e6pMeqw" is not working because it's invalid
+                emailjs.init("YOUR_ACTUAL_PUBLIC_KEY");
                 console.log("EmailJS initialized successfully");
                 return true;
             } catch (error) {
@@ -68,15 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
             submitButton.value = 'Sending...';
             submitButton.disabled = true;
 
-            // Collect form data
-            const templateParams = {
-                to_name: "Elier",
-                from_name: document.getElementById('full-name').value,
-                reply_to: document.getElementById('email').value,
-                phone_number: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
+            // We'll use the form directly with emailjs.sendForm
+            // Make sure your form fields have the correct name attributes that match your EmailJS template
+            // For example, if your template uses {{from_name}}, the input should have name="from_name"
 
             // Send email using EmailJS with updated syntax
             try {
@@ -87,8 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     throw new Error("EmailJS is not defined. The library may not be loaded properly.");
                 }
 
-                // Use the simpler send method that doesn't require the publicKey parameter again
-                emailjs.send("portfoliosite_7nlmka8", "template_gf75cnl", templateParams)
+                // IMPORTANT: Replace these with your actual service ID and template ID from EmailJS dashboard
+                // You can find these at https://dashboard.emailjs.com/admin
+                // Your service ID should look like "service_xxxxxxx"
+                // Your template ID should look like "template_xxxxxxx"
+                emailjs.sendForm("portfoliosite_7nlmka8", "template_gf75cnl", contactForm)
                 .then(function(response) {
                     console.log("SUCCESS:", response);
                     alert('Message sent successfully!');

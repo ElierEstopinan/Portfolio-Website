@@ -9,7 +9,6 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <!-- No EmailJS SDK here, moved to end of body -->
 </head>
 <body>
     <!-- Header Section -->
@@ -338,12 +337,15 @@
       <section class="contact-form" id="contact-form-section">
         <h2 class="heading"> Contact <span>Me</span></h2>
         <form id="contact-form">
+            <!-- Hidden field for to_name (recipient) -->
+            <input type="hidden" name="to_name" value="Elier">
+
             <div class="input-box">
-                <input type="text" id="full-name" name="full_name" placeholder="Full Name" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="text" id="full-name" name="from_name" placeholder="Full Name" required>
+                <input type="email" id="email" name="reply_to" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                <input type="tel" id="phone" name="phone_number" placeholder="Phone Number">
                 <input type="text" id="subject" name="subject" placeholder="Subject">
             </div>
             <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
