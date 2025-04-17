@@ -56,6 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: document.getElementById('message').value,
             };
 
+            // Validate required fields
+            if (!formData.full_name || !formData.email || !formData.message) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
             console.log("Form Data Collected:", formData); // Debugging log
 
             // Send email using EmailJS
