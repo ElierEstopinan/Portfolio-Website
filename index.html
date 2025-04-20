@@ -9,6 +9,7 @@
     <meta name="author" content="Elier Estopinan">
     <title>Elier Estopinan | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
@@ -33,25 +34,25 @@
     <!-- Home Section -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello,</h3>
-            <h1>I am <span>Elier</span></h1>
-            <ul>
-                <li>Frontend Developer</li>
-                <li>Cloud Computing</li>
-                <li>DevOps</li>
+            <h3 class="animate-on-scroll" data-animation="fade-in" data-once="true">Hello,</h3>
+            <h1 class="animate-on-scroll" data-animation="slide-up" data-once="true">I am <span>Elier</span></h1>
+            <ul data-stagger-group>
+                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true">Frontend Developer</li>
+                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true">Cloud Computing</li>
+                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true">DevOps</li>
             </ul>
-            <div class="btn-box">
+            <div class="btn-box animate-on-scroll" data-animation="slide-up" data-once="true">
                 <a href="assets/Elier_Estopinan_Resume.pdf" download class="btn-1">Download CV</a>
                 <a href="#contact-section" class="btn-2">Contact Me</a>
             </div>
 
-            <div class="social">
+            <div class="social animate-on-scroll" data-animation="fade-in" data-once="true">
               <a href="https://www.linkedin.com/in/elier-estopinan-132a491b2/"><i class='bx bxl-linkedin-square'></i></a>
               <a href="https://github.com/ElierEstopinan/"><i class='bx bxl-github'></i></a>
             </div>
 
         </div>
-        <div class="img-box">
+        <div class="img-box animate-on-scroll" data-animation="scale-up" data-once="true">
             <img src="profile_pic.jpeg" alt="">
         </div>
     </section>
@@ -59,11 +60,11 @@
     <!-- About Me Section -->
     <section class="about" id="about">
         <div class="about-content">
-            <p class="asection__text__p1">Get to know more</p>
-            <h1 class="atitle">About Me</h1>
-            <p>Experienced Strategic Operations Manager with a demonstrated history of working in the information technology and services industry. Skilled in Operations Management, Business Process Improvement, IT Service Management, Incident Management, and ITIL. Strong operations professional with a Associate of Science (A.S.) focused in Network and System Administration/Administrator from Hillsborough Community College.</p>
+            <p class="asection__text__p1 animate-on-scroll" data-animation="fade-in" data-once="true">Get to know more</p>
+            <h1 class="atitle animate-on-scroll" data-animation="slide-up" data-once="true">About Me</h1>
+            <p class="animate-on-scroll" data-animation="slide-right" data-once="true">Experienced Strategic Operations Manager with a demonstrated history of working in the information technology and services industry. Skilled in Operations Management, Business Process Improvement, IT Service Management, Incident Management, and ITIL. Strong operations professional with a Associate of Science (A.S.) focused in Network and System Administration/Administrator from Hillsborough Community College.</p>
         </div>
-        <div class="aimg-box">
+        <div class="aimg-box animate-on-scroll" data-animation="slide-left" data-once="true">
             <img src="profile_pic.jpeg" alt="">
         </div>
     </section>
@@ -71,15 +72,16 @@
 
      <!-- Projects Section -->
      <section class="projects" id="projects">
-        <p class="psection__text__p1">Browse My Recent</p>
-        <h1 class="ptitle">Projects</h1>
-        <div class="swiper mySwiper container">
+        <p class="psection__text__p1 animate-on-scroll" data-animation="fade-in" data-once="true">Browse My Recent</p>
+        <h1 class="ptitle animate-on-scroll" data-animation="slide-up" data-once="true">Projects</h1>
+        <div class="swiper mySwiper container animate-on-scroll" data-animation="fade-in" data-once="true">
           <div class="swiper-wrapper content">
                 <!-- P1 -->
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                            <img src="assets/portfolio.png" alt="Portfolio Website">
+                            <img class="swiper-lazy" data-src="assets/portfolio.png" alt="Portfolio Website">
+                            <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">Portfolio Website</span>
@@ -95,7 +97,8 @@
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                          <img src="assets/cloud.png" alt="Azure Cloud Project">
+                          <img class="swiper-lazy" data-src="assets/cloud.png" alt="Azure Cloud Project">
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">Azure Cloud Infrastructure</span>
@@ -111,7 +114,8 @@
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                          <img src="assets/devops.png" alt="DevOps Pipeline">
+                          <img class="swiper-lazy" data-src="assets/devops.png" alt="DevOps Pipeline">
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">CI/CD Pipeline</span>
@@ -127,7 +131,8 @@
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                          <img src="assets/python.png" alt="Python Automation">
+                          <img class="swiper-lazy" data-src="assets/python.png" alt="Python Automation">
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">Python Automation</span>
@@ -143,7 +148,8 @@
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                          <img src="assets/network.png" alt="Network Security">
+                          <img class="swiper-lazy" data-src="assets/network.png" alt="Network Security">
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">Network Security</span>
@@ -159,7 +165,8 @@
                 <div class="swiper-slide card">
                     <div class="project-content">
                         <div class="pimage">
-                          <img src="assets/webapp.png" alt="Web Application">
+                          <img class="swiper-lazy" data-src="assets/webapp.png" alt="Web Application">
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
                         <div class="name-project">
                             <span class="name">Responsive Web App</span>
@@ -182,60 +189,61 @@
 
     <!-- Scripts -->
 
-    <!-- Main Script -->
+    <!-- Main Scripts -->
     <script src="./script.js"></script>
+    <script src="./animations.js"></script>
 
        <!-- Skills Section -->
     <section class= experience id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
+      <p class="section__text__p1 animate-on-scroll" data-animation="fade-in" data-once="true">Explore My</p>
+      <h1 class="title animate-on-scroll" data-animation="slide-up" data-once="true">Skills</h1>
       <div class="experience-details-container">
-        <div class="details-container">
+        <div class="details-container animate-on-scroll" data-animation="slide-right" data-once="true">
           <h2 class="experience-sub-title">Technical</h2>
-          <div class="article-container">
-            <article>
+          <div class="article-container" data-stagger-group>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>HTML</h3>
                 <p>Experienced</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>CSS</h3>
                 <p>Experienced</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>SASS</h3>
                 <p>Intermediate</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>JavaScript</h3>
                 <p>Basic</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Python</h3>
                 <p>Basic</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Azure</h3>
                 <p>Basic</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
                 <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>GitHub</h3>
@@ -244,31 +252,31 @@
               </article>
           </div>
         </div>
-        <div class="details-container">
+        <div class="details-container animate-on-scroll" data-animation="slide-left" data-once="true">
           <h2 class="experience-sub-title">Soft</h2>
-          <div class="article-container">
-            <article>
+          <div class="article-container" data-stagger-group>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>PostgreSQL</h3>
                 <p>Basic</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Node JS</h3>
                 <p>Intermediate</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Express JS</h3>
                 <p>Intermediate</p>
               </div>
             </article>
-            <article>
+            <article class="stagger-item animate-on-scroll" data-animation="fade-in">
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Git</h3>
@@ -282,9 +290,9 @@
 
      <!-- Education and Certifications -->
      <section class="education" id="education">
-      <p class="edu__text__p1">Timeline of</p>
-      <h1 class="edu_title">Education</h1>
-        <div class="etimeline">
+      <p class="edu__text__p1 animate-on-scroll" data-animation="fade-in" data-once="true">Timeline of</p>
+      <h1 class="edu_title animate-on-scroll" data-animation="slide-up" data-once="true">Education</h1>
+        <div class="etimeline animate-on-scroll" data-animation="fade-in" data-once="true">
 
           <div class="e_container right-container">
             <image src="assets/az-900-badge.png"> </image>
@@ -325,9 +333,9 @@
 
     <!-- Contact Section -->
       <section class="contact-section" id="contact-section">
-        <h2 class="heading"> Contact <span>Me</span></h2>
+        <h2 class="heading animate-on-scroll" data-animation="slide-up" data-once="true"> Contact <span>Me</span></h2>
 
-        <div class="contact-card">
+        <div class="contact-card animate-on-scroll" data-animation="scale-up" data-once="true">
             <div class="contact-icon">
                 <i class='bx bx-envelope'></i>
             </div>
@@ -338,14 +346,14 @@
             </div>
         </div>
 
-        <div class="social-links">
+        <div class="social-links animate-on-scroll" data-animation="slide-up" data-once="true">
             <h3>Connect With Me</h3>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/elier-estopinan-132a491b2/" class="social-icon">
+            <div class="social-icons" data-stagger-group>
+                <a href="https://www.linkedin.com/in/elier-estopinan-132a491b2/" class="social-icon stagger-item animate-on-scroll" data-animation="fade-in">
                     <i class='bx bxl-linkedin-square'></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/ElierEstopinan/" class="social-icon">
+                <a href="https://github.com/ElierEstopinan/" class="social-icon stagger-item animate-on-scroll" data-animation="fade-in">
                     <i class='bx bxl-github'></i>
                     <span>GitHub</span>
                 </a>
@@ -354,13 +362,18 @@
     </section>
 
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="social">
+        <div class="social animate-on-scroll" data-animation="fade-in" data-once="true">
             <a href="https://www.linkedin.com/in/elier-estopinan-132a491b2/" aria-label="LinkedIn Profile"><i class='bx bxl-linkedin-square'></i></a>
             <a href="https://github.com/ElierEstopinan/" aria-label="GitHub Profile"><i class='bx bxl-github'></i></a>
         </div>
-        <ul class="list">
+        <ul class="list animate-on-scroll" data-animation="slide-up" data-once="true">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -368,7 +381,7 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#contact-section">Contact</a></li>
         </ul>
-        <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Elier Estopinan | All Rights Reserved</p>
+        <p class="copyright animate-on-scroll" data-animation="fade-in" data-once="true">&copy; <script>document.write(new Date().getFullYear())</script> Elier Estopinan | All Rights Reserved</p>
     </footer>
 </body>
 </html>
