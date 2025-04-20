@@ -1200,13 +1200,13 @@ section .card .pimage .swiper-lazy-preloader {
 }
 
 .details-container {
-  background: var(--card-bg);
+  background: var(--card-bg); /* Dark background for consistency */
   border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   box-shadow: var(--shadow-md);
   flex: 1;
-  min-width: 300px;
-  max-width: 500px;
+  min-width: 280px;
+  max-width: 400px;
   border-left: 5px solid var(--primary-color); /* Accent border */
   transition: background-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
   animation: fadeIn 1s ease-in-out 0.5s both;
@@ -1214,23 +1214,7 @@ section .card .pimage .swiper-lazy-preloader {
   overflow: hidden;
 }
 
-/* Add subtle gradient overlay to ensure contrast */
-.details-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0,159,191,0.05) 0%, rgba(0,0,0,0.1) 100%);
-  pointer-events: none;
-  z-index: 1;
-  transition: background var(--transition-normal);
-}
-
-.dark-theme .details-container::before {
-  background: linear-gradient(135deg, rgba(0,159,191,0.1) 0%, rgba(0,0,0,0.2) 100%);
-}
+/* No gradient overlay for consistent styling */
 
 .details-container:hover {
   transform: translateY(-5px);
@@ -1238,23 +1222,20 @@ section .card .pimage .swiper-lazy-preloader {
   border-color: var(--primary-color-light);
 }
 
-/* Add subtle border in dark mode for better visibility */
+/* Dark theme specific shadow enhancement */
 .dark-theme .details-container {
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 5px solid var(--primary-color);
-  box-shadow: var(--shadow-md), 0 0 15px rgba(0, 159, 191, 0.1);
+  box-shadow: var(--shadow-md), 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .experience-sub-title {
   color: var(--primary-color);
   font-weight: 600;
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-md);
   text-align: center;
   transition: color var(--transition-normal);
   position: relative;
   z-index: 5;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .article-container {
@@ -1267,35 +1248,25 @@ article {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  transition: transform var(--transition-normal), background-color var(--transition-normal);
+  transition: transform var(--transition-normal);
   position: relative;
   z-index: 5;
   padding: var(--spacing-xs);
   border-radius: var(--border-radius-sm);
-  background-color: rgba(255, 255, 255, 0.03);
   margin-bottom: var(--spacing-xs);
 }
 
-.dark-theme article {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
 article:hover {
-  transform: translateX(5px);
-  background-color: rgba(0, 159, 191, 0.1);
+  transform: translateX(3px);
 }
 
 article .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: var(--primary-color);
-  transition: color var(--transition-normal), filter var(--transition-normal);
+  transition: transform var(--transition-normal);
   position: relative;
   z-index: 5;
-}
-
-.dark-theme article .icon {
-  filter: drop-shadow(0 0 3px rgba(0, 159, 191, 0.5));
 }
 
 article:hover .icon {
@@ -1303,8 +1274,8 @@ article:hover .icon {
 }
 
 article h3 {
-  font-size: var(--font-size-md);
-  color: var(--text-color-light);
+  font-size: var(--font-size-base);
+  color: var(--text-color-light); /* Light text color for dark backgrounds */
   margin: 0;
   transition: color var(--transition-normal);
   font-weight: 600;
@@ -1312,21 +1283,13 @@ article h3 {
   z-index: 5;
 }
 
-.dark-theme article h3 {
-  color: var(--white);
-}
-
 article p {
-  font-size: var(--font-size-base);
-  color: var(--text-color-light);
+  font-size: var(--font-size-sm);
+  color: var(--primary-color);
   margin: 0;
   transition: color var(--transition-normal);
   position: relative;
   z-index: 5;
-}
-
-.dark-theme article p {
-  color: var(--primary-color-light);
 }
 
 @media (max-width: 992px) {
@@ -1335,7 +1298,8 @@ article p {
   }
 
   .details-container {
-    min-width: 250px;
+    min-width: 240px;
+    max-width: 350px;
   }
 }
 
@@ -1346,20 +1310,20 @@ article p {
   }
 
   .details-container {
-    max-width: 100%;
+    max-width: 90%;
     animation: fadeIn 1s ease-in-out 0.3s both;
   }
 
   .experience-sub-title {
-    font-size: var(--font-size-md);
-  }
-
-  article h3 {
     font-size: var(--font-size-base);
   }
 
-  article p {
+  article h3 {
     font-size: var(--font-size-sm);
+  }
+
+  article p {
+    font-size: calc(var(--font-size-sm) * 0.9);
   }
 }
 
