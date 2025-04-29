@@ -163,7 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-script.js
+
+// Typing Title
 class TypeWriter {
     constructor(txtElement, words, wait = 3000) {
         this.txtElement = txtElement;
