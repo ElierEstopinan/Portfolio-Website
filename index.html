@@ -36,11 +36,10 @@
         <div class="home-content">
             <h3 class="animate-on-scroll" data-animation="fade-in" data-once="true">Hello,</h3>
             <h1 class="animate-on-scroll" data-animation="slide-up" data-once="true">I am <span>Elier</span></h1>
-            <ul data-stagger-group>
-                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true">IT Supervisor and Support Profesional</li>
-                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true">Aspiring Cloud Engineer</li>
-                <li class="animate-on-scroll stagger-item" data-animation="slide-left" data-once="true"> AI & Software Development Enthusiast</li>
-            </ul>
+            <!-- Replace the existing ul with this -->
+            <div class="typing-container">
+                <span id="typing-text" class="animate-on-scroll" data-animation="fade-in" data-once="true"></span>
+            </div>
             <div class="btn-box animate-on-scroll" data-animation="slide-up" data-once="true">
                 <a href="assets/Elier_Estopinan_Resume.pdf" download class="btn-1">Download CV</a>
                 <a href="#contact-section" class="btn-2">Contact Me</a>
@@ -382,6 +381,51 @@
             <li><a href="#contact-section">Contact</a></li>
         </ul>
         <p class="copyright animate-on-scroll" data-animation="fade-in" data-once="true">&copy; <script>document.write(new Date().getFullYear())</script> Elier Estopinan | All Rights Reserved</p>
-    </footer>
+ 
+     </footer>
+        
+        <!-- Typing Effect Script -->
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                const texts = [
+                    'IT Supervisor and Support Professional',
+                    'Aspiring Cloud Engineer',
+                    'AI & Software Development Enthusiast'
+                ];
+                let textIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                const typingDelay = 100;
+                const erasingDelay = 50;
+                const newTextDelay = 2000;
+                const typingElement = document.getElementById('typing-text');
+    
+                function type() {
+                    const currentText = texts[textIndex];
+                    if (isDeleting) {
+                        typingElement.textContent = currentText.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typingElement.textContent = currentText.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+    
+                    if (!isDeleting && charIndex === currentText.length) {
+                        isDeleting = true;
+                        setTimeout(type, newTextDelay);
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        textIndex = (textIndex + 1) % texts.length;
+                        setTimeout(type, typingDelay);
+                    } else {
+                        setTimeout(type, isDeleting ? erasingDelay : typingDelay);
+                    }
+                }
+    
+                type();
+            });
+        </script>
+        </body>
+    </html>
 </body>
 </html>

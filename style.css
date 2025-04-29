@@ -1588,3 +1588,24 @@ article p {
   box-shadow: var(--shadow-lg);
 }
 
+.typing-container {
+    min-height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#typing-text {
+    font-size: var(--font-size-md);
+    color: var(--text-color);
+    border-right: 3px solid var(--primary-color);
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color) }
+}
