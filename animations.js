@@ -1,4 +1,4 @@
-I // Scroll Animations using Intersection Observer API
+// Scroll Animations using Intersection Observer API
 document.addEventListener('DOMContentLoaded', () => {
   // Elements to animate on scroll
   const animateElements = document.querySelectorAll('.animate-on-scroll');
