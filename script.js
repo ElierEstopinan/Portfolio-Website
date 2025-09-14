@@ -222,12 +222,12 @@ class TypeWriter {
 // Init On DOM Load
 document.addEventListener('DOMContentLoaded', init);
 
-// Init App
+// Typped Header Erase and Delete
 function init() {
     const txtElement = document.getElementById('typing-text');
     const words = [
-        'IT Supervisor and Support Professional',
-        'Aspiring Cloud Engineer',
+        'IT Performance & Monitoring Engineer',
+        'Automation & FinOps',
         'AI & Software Development Enthusiast'
     ];
     const wait = 3000;
