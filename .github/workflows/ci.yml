@@ -6,15 +6,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-      - name: npm install, build
+          node-version: 18.x
+      - name: Install dependencies
         run: |
-          npm install
+          npm ci
+      - name: Build (noop)
+        run: |
           npm run build
-      - name: run Lighthouse CI
+      - name: Start static server
+        run: |
+          # Start the http-server in background on port 8080
+          npm start &
+          # Give the server a moment to start
+          sleep 3
+      - name: Run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.15.x
-          lhci autorun
+          # Explicitly tell LHCI to collect from the local server and upload to temporary storage
+          lhci autorun --collect.serverBaseUrl=http://localhost:8080 --upload.target=temporary-public-storage
