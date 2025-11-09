@@ -342,7 +342,7 @@ span {
   max-width: 450px;
   box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--primary-color);
   border-radius: var(--border-radius-full);
-  transition: box-shadow var(--transition-normal);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
 .home .social {
@@ -497,6 +497,12 @@ span {
 }
 
 .aimg-box img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px var(--primary-color), 0 0 70px var(--primary-color);
+}
+
+/* Make home section image hover match the about section hover */
+.img-box img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 35px var(--primary-color), 0 0 70px var(--primary-color);
 }
