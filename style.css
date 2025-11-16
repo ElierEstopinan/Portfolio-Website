@@ -730,15 +730,12 @@ section .card .pimage .swiper-lazy-preloader {
   display: none !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  /* previously you set border-color only — hiding it fully removes the circle */
 }
 
-/* Optional: still keep hover scale for the small project images */
 section .card .pimage img:hover {
   transform: scale(1.1);
 }
 
-/* Swiper lazy loading styles */
 section .card .pimage .swiper-lazy-preloader {
   border-color: var(--primary-color);
 }
@@ -748,7 +745,7 @@ section .card .pimage .swiper-lazy-preloader {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 120px; /* Fixed height for name-project container */
+  height: 120px; 
   overflow: hidden;
 }
 
@@ -761,8 +758,8 @@ section .card .pimage .swiper-lazy-preloader {
   margin-top: var(--spacing-md);
   color: var(--text-color-light);
   transition: color var(--transition-normal);
-  height: 30px; /* Fixed height for title */
-  overflow: hidden; /* Prevent overflow */
+  height: 30px; 
+  overflow: hidden; 
   text-align: center;
   width: 100%;
 }
@@ -773,12 +770,12 @@ section .card .pimage .swiper-lazy-preloader {
   color: var(--text-color-light);
   transition: color var(--transition-normal);
   text-align: center;
-  height: 80px; /* Fixed height for description */
-  overflow-y: auto; /* Allow scrolling if content is too long */
+  height: 80px; 
+  overflow-y: auto; 
   margin: var(--spacing-sm) 0;
   display: -webkit-box;
   display: box;
-  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-line-clamp: 4; 
   line-clamp: 4;
   -webkit-box-orient: vertical;
   box-orient: vertical;
@@ -867,7 +864,7 @@ section .card .pimage .swiper-lazy-preloader {
   }
 
   .card {
-    height: 450px; /* Keep consistent height */
+    height: 450px; 
     min-height: 450px;
     max-height: 450px;
   }
@@ -883,7 +880,7 @@ section .card .pimage .swiper-lazy-preloader {
   }
 
   .card {
-    height: 450px; /* Keep consistent height */
+    height: 450px; 
     min-height: 450px;
     max-height: 450px;
   }
@@ -914,11 +911,11 @@ section .card .pimage .swiper-lazy-preloader {
   text-align: center;
   margin: 50px 0;
   font-size: 36px;
-  color: white; /* White text */
+  color: white; 
 }
 
 .certifications .heading span {
-  color: #009fbf; /* Primary color */
+  color: #009fbf; /
 }
 
 /* Certification Container */
@@ -926,14 +923,14 @@ section .card .pimage .swiper-lazy-preloader {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Adjust gap between cards as needed */
+    gap: 20px; 
     color: black;
 }
 
 /* Certification Card */
 .certification-card {
-    flex: 1 1 200px; /* Allow cards to grow and shrink, with a base width of 200px */
-    max-width: 200px; /* Ensure cards do not exceed 200px in width */
+    flex: 1 1 200px; 
+    max-width: 200px; 
     height: 200px;
     border-radius: 10px;
     margin: 0 10px;
@@ -942,37 +939,37 @@ section .card .pimage .swiper-lazy-preloader {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 18px; /* Increase font size */
+    font-size: 18px; 
     text-align: center;
-    border-left: 5px solid #009fbf; /* Accent border to match other cards */
-    background-color: #1e1e1e; /* Set background color */
-    color: #fff; /* White text color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Match box shadow with other elements */
+    border-left: 5px solid #009fbf; 
+    background-color: #1e1e1e;
+    color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .certification-title {
-  font-size: 1.25; /* Increase font size */
+  font-size: 1.25; 
   font-weight: bold;
   color: #ffffff;
-  padding: 5px 10px; /* Increase padding */
+  padding: 5px 10px; 
 
 }
 .organazation {
-  font-size: 1rem; /* Increase font size */
+  font-size: 1rem;
   color: #009fbf;
-  margin-top: 10px; /* Increase margin-top */
-  padding: 10px 15px; /* Increase padding */
+  margin-top: 10px; 
+  padding: 10px 15px; 
 
 }
 
 .completed-date{
   background-color: #333;
   color: #e0e0e0;
-  font-size: 16px; /* Increase font size */
+  font-size: 16px; 
   display: inline-block;
-  padding: 10px 15px; /* Increase padding */
+  padding: 10px 15px; 
   border-radius: 5px;
-  margin-top: 15px; /* Increase margin-top */
+  margin-top: 15px;
 }
 
 /* Contact Section */
@@ -1146,7 +1143,6 @@ section .card .pimage .swiper-lazy-preloader {
   }
 }
 
-/* Additional styles can be added here if needed */
 
 /* Footer Section */
 .footer {
@@ -1268,7 +1264,7 @@ section .card .pimage .swiper-lazy-preloader {
 }
 
 .details-container {
-  background: var(--card-bg); /* Dark background for consistency */
+  background: var(--card-bg); 
   border-radius: var(--border-radius-md);
   padding: var(--spacing-md);
   box-shadow: var(--shadow-md);
@@ -1342,7 +1338,7 @@ article:hover .icon {
 
 article h3 {
   font-size: var(--font-size-base);
-  color: var(--text-color-light); /* Light text color for dark backgrounds */
+  color: var(--text-color-light); 
   margin: 0;
   transition: color var(--transition-normal);
   font-weight: 600;
