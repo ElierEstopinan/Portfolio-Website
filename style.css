@@ -251,7 +251,7 @@ span {
   gap: var(--spacing-lg);
   background: var(--bg-color-light);
   flex-wrap: wrap;
-  margin-top: 100px; /* Add margin to avoid overlap with fixed header */
+  margin-top: 100px;
   transition: background-color var(--transition-normal);
 }
 
@@ -343,6 +343,15 @@ span {
   box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--primary-color);
   border-radius: var(--border-radius-full);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  pointer-events: auto;
+  z-index: 1;
+  will-change: transform, box-shadow;
+}
+
+.img-box img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px var(--primary-color), 0 0 70px var(--primary-color);
+  z-index: 20; 
 }
 
 .home .social {
@@ -471,19 +480,19 @@ span {
 
 .about-content {
   max-width: 800px;
-  text-align: left; /* Align text to the left */
-  flex: 1; /* Allow flex growth */
-  color: var(--text-color-light); /* Set text color to white */
+  text-align: left; 
+  flex: 1; 
+  color: var(--text-color-light); 
   transition: color var(--transition-normal);
   animation: slideInRight 1s ease-in-out 0.5s both;
 }
 
 .aimg-box {
-  flex: 1; /* Allow flex growth */
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
-  order: -1; /* Move image to the left */
+  order: -1; /* removed stray slash here */
   animation: slideInLeft 1s ease-in-out 0.5s both;
 }
 
@@ -494,17 +503,16 @@ span {
   box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--primary-color);
   border-radius: var(--border-radius-full);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  pointer-events: auto;
+  z-index: 1;
+  will-change: transform, box-shadow;
 }
 
+/* Add hover effect for about image */
 .aimg-box img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 35px var(--primary-color), 0 0 70px var(--primary-color);
-}
-
-/* Make home section image hover match the about section hover */
-.img-box img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px var(--primary-color), 0 0 70px var(--primary-color);
+  z-index: 20;
 }
 
 /* Animations */
@@ -661,6 +669,9 @@ section .card .pimage {
   background: var(--primary-color);
   margin-top: var(--spacing-lg);
   position: relative;
+  /* ensure spinner (if present) stays clipped inside the image box */
+  overflow: hidden;
+  z-index: 0;
 }
 
 section .card .pimage img {
@@ -669,9 +680,60 @@ section .card .pimage img {
   object-fit: cover;
   border-radius: var(--border-radius-md);
   border: 3px solid var(--white);
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  pointer-events: auto;
+  z-index: 2;
+  will-change: transform, box-shadow;
 }
 
+/* Remove/hide Swiper's lazy preloader spinner */
+section .card .pimage .swiper-lazy-preloader {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  /* previously you set border-color only — hiding it fully removes the circle */
+}
+
+/* Optional: still keep hover scale for the small project images */
+section .card .pimage img:hover {
+  transform: scale(1.1);
+}
+
+section .card .pimage {
+  height: 140px;
+  width: 140px;
+  border-radius: var(--border-radius-md);
+  padding: 3px;
+  background: var(--primary-color);
+  margin-top: var(--spacing-lg);
+  position: relative;
+  /* ensure spinner (if present) stays clipped inside the image box */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Ensure the project image sits above any spinners/overlays and can receive hover */
+section .card .pimage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  border: 3px solid var(--white);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  pointer-events: auto;
+  z-index: 2;
+  will-change: transform, box-shadow;
+}
+
+/* Remove/hide Swiper's lazy preloader spinner */
+section .card .pimage .swiper-lazy-preloader {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  /* previously you set border-color only — hiding it fully removes the circle */
+}
+
+/* Optional: still keep hover scale for the small project images */
 section .card .pimage img:hover {
   transform: scale(1.1);
 }
