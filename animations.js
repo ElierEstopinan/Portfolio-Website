@@ -13,23 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // Callback function when elements intersect viewport
   const animationCallback = (entries, observer) => {
     entries.forEach(entry => {
-      // Only animate elements that are intersecting
+      // Get the element for this entry (safe in both branches)
+      const element = entry.target;
+
       if (entry.isIntersecting) {
-        const element = entry.target;
-        
         // Add the animation class based on data attribute
         const animationType = element.dataset.animation || 'fade-in';
         element.classList.add(animationType);
-        
+
         // Optional: Stop observing after animation
         if (element.dataset.once === 'true') {
           observer.unobserve(element);
         }
-      } else if (element.dataset.once !== 'true') {
+      } else {
         // Remove animation class if element is not in view and not set to animate once
-        const element = entry.target;
-        const animationType = element.dataset.animation || 'fade-in';
-        element.classList.remove(animationType);
+        if (element.dataset.once !== 'true') {
+          const animationType = element.dataset.animation || 'fade-in';
+          element.classList.remove(animationType);
+        }
       }
     });
   };
