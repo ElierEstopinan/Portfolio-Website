@@ -370,12 +370,15 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 300px;
 }
 
 .img-box img {
   position: relative;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
   box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--primary-color);
   border-radius: var(--border-radius-full);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
@@ -427,6 +430,10 @@ span {
   .home-content h1 {
     font-size: calc(var(--font-size-xxl) * 0.9);
   }
+
+  .img-box img {
+    max-width: 420px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -463,8 +470,12 @@ span {
     padding: 12px 16px;
   }
 
+  .img-box {
+    display: flex;
+  }
+
   .img-box img {
-    max-width: 350px;
+    max-width: 380px;
   }
 }
 
@@ -494,11 +505,13 @@ span {
   }
 
   .img-box {
-    display: none;
+    display: flex;
+    min-width: auto;
   }
 
   .img-box img {
-    max-width: 280px;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -510,8 +523,9 @@ span {
   padding: 10% 10%;
   gap: var(--spacing-lg);
   background: var(--bg-color-dark);
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
   transition: background-color var(--transition-normal);
+  margin-top: 100px;
 }
 
 .asection__text__p1 {
@@ -532,9 +546,10 @@ span {
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 600px;
   text-align: left; 
-  flex: 1; 
+  flex: 1;
+  min-width: 300px;
   color: var(--text-color-light); 
   transition: color var(--transition-normal);
   animation: slideInRight 1s ease-in-out 0.5s both;
@@ -545,14 +560,17 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  order: -1; /* removed stray slash here */
+  order: -1;
+  min-width: 300px;
   animation: slideInLeft 1s ease-in-out 0.5s both;
 }
 
 .aimg-box img {
   position: relative;
-  width: 100%; /* Full width on smaller screens */
-  max-width: 450px; /* Limit max width */
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
   box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--primary-color);
   border-radius: var(--border-radius-full);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
@@ -590,55 +608,66 @@ span {
   }
 
   .aimg-box img {
-    max-width: 400px;
+    max-width: 420px;
+  }
+
+  .about-content {
+    max-width: 500px;
   }
 }
 
 @media (max-width: 768px) {
   .about {
-    flex-direction: column; /* Stack content vertically on smaller screens */
-    padding: 8% 5%; /* Adjust padding for smaller screens */
-    gap: var(--spacing-md); /* Reduce gap for smaller screens */
+    flex-direction: column;
+    padding: 8% 5%;
+    gap: var(--spacing-md);
   }
 
   .about-content {
-    text-align: center; /* Center text on smaller screens */
+    text-align: center;
     animation: fadeIn 1s ease-in-out 0.5s both;
+    max-width: 100%;
   }
 
   .about-content h3 {
-    font-size: var(--font-size-lg); /* Adjust font size for smaller screens */
+    font-size: var(--font-size-lg);
   }
 
   .about-content h1 {
-    font-size: calc(var(--font-size-xl) * 1.5); /* Adjust font size for smaller screens */
+    font-size: calc(var(--font-size-xl) * 1.5);
   }
 
   .aimg-box {
-    order: 0; /* Reset order for smaller screens */
+    order: 0;
     animation: fadeIn 1s ease-in-out 0.3s both;
+    min-width: auto;
   }
 
   .aimg-box img {
-    max-width: 350px;
+    max-width: 380px;
   }
 }
 
 @media (max-width: 480px) {
   .about-content h3 {
-    font-size: var(--font-size-md); /* Further adjust font size for very small screens */
+    font-size: var(--font-size-md);
   }
 
   .about-content h1 {
-    font-size: var(--font-size-xl); /* Further adjust font size for very small screens */
+    font-size: var(--font-size-xl);
   }
 
   .about-content p {
-    font-size: var(--font-size-sm); /* Adjust font size for very small screens */
+    font-size: var(--font-size-sm);
+  }
+
+  .aimg-box {
+    min-width: auto;
   }
 
   .aimg-box img {
-    max-width: 280px;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
