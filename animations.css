@@ -131,9 +131,29 @@
 
 /* Responsive adjustments */
 @media (prefers-reduced-motion: reduce) {
-  .animate-on-scroll {
+  .animate-on-scroll,
+  .fade-in,
+  .slide-up,
+  .slide-left,
+  .slide-right,
+  .scale-up,
+  .rotate-in,
+  .blur-in {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* Reduce animation duration on mobile for better performance */
+@media (max-width: 768px) {
+  .fade-in,
+  .slide-up,
+  .slide-left,
+  .slide-right,
+  .scale-up,
+  .rotate-in,
+  .blur-in {
+    animation-duration: 0.5s !important;
   }
 }
